@@ -1,0 +1,25 @@
+.wrapper { max-width: 1000px; margin: 70px auto 0; }
+.form { padding: clamp(28px, 4vw, 60px); border: 1px solid var(--border); border-radius: 20px; background: #fff; }
+.form fieldset { margin: 0 0 40px; padding: 0 0 37px; border: 0; border-bottom: 1px solid var(--border); }
+.form legend { display: block; width: 100%; margin: 0 0 24px; font-family: var(--font-display); font-size: 31px; font-weight: 500; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 23px; }
+.stack { display: flex; flex-direction: column; gap: 24px; }
+.form label { display: flex; flex-direction: column; gap: 8px; min-width: 0; font-size: 13px; font-weight: 760; }
+.form label > span:not(.fileLabel span) { color: var(--ink); }
+.form input:not([type=file]), .form select, .form textarea { width: 100%; min-height: 50px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: #fbfcfa; color: var(--ink); font-size: 14px; font-weight: 500; }
+.form textarea { resize: vertical; }
+.fileLabel input { width: 100%; padding: 17px; border: 1px dashed var(--green); border-radius: 8px; background: #f5f9f5; font-size: 13px; }
+.fileLabel > span { color: var(--muted); font-size: 12px; font-weight: 500; }
+.helper { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.error { margin: -10px 0 0; color: var(--crimson); font-size: 13px; font-weight: 750; }
+.submit { display: inline-flex; justify-content: center; align-items: center; gap: 23px; min-height: 54px; padding: 0 25px; border: 0; border-radius: 9px; background: var(--green); color: var(--green-ink); font-size: 14px; font-weight: 850; }
+.submit:hover { background: var(--green-deep); }
+.submit span { font-size: 22px; font-weight: 400; }
+.draft { margin-top: 25px; padding: 30px; border: 1px solid var(--border); border-radius: 14px; background: var(--sage); }
+.draft h2 { margin: 0; font-family: var(--font-display); font-size: 31px; font-weight: 500; }
+.draft p { color: var(--muted); line-height: 1.6; }
+.draft textarea { display: block; width: 100%; padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: #fff; font: 13px/1.6 monospace; resize: vertical; }
+.draft > div { display: flex; gap: 20px; align-items: center; margin-top: 18px; }
+.draft button { min-height: 44px; padding: 0 18px; border: 0; border-radius: 7px; background: var(--green); color: var(--green-ink); font-weight: 800; }
+.draft a { color: var(--green-deep); font-weight: 800; text-decoration: underline; }
+@media (max-width: 620px) { .grid { grid-template-columns: 1fr; gap: 18px; } .form { padding: 25px 20px; } .form fieldset { margin-bottom: 29px; } .draft { padding: 22px; } .draft > div { align-items: flex-start; flex-direction: column; } }

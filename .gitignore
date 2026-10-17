@@ -1,0 +1,34 @@
+.DS_Store
+**/.DS_Store
+
+# Local environment and secrets
+**/.env
+**/.env.local
+**/.env.*.local
+!**/.env.example
+
+# JavaScript / Next.js
+**/node_modules/
+**/.next/
+**/out/
+**/coverage/
+**/*.tsbuildinfo
+
+# Laravel / PHP
+apps/api/vendor/
+apps/api/public/storage
+apps/api/public/hot
+apps/api/storage/*.key
+apps/api/storage/logs/*.log
+apps/api/database/*.sqlite*
+
+# Hosting and editor state
+**/.vercel/
+**/.idea/
+**/.vscode/
+**/.embedded-git-backup/
+*.log
+
+# Local reference-page downloads (not application assets)
+Asset/*.html
+Asset/*_files/

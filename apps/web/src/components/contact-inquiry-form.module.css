@@ -1,0 +1,23 @@
+.card { position: relative; isolation: isolate; overflow: hidden; padding: clamp(25px, 3vw, 38px); border: 1px solid rgba(25,35,30,.12); border-radius: 24px 24px 24px 7px; background: radial-gradient(circle at 100% 0, rgba(28,155,91,.14), transparent 40%), #fff; box-shadow: 0 28px 70px rgba(25,42,31,.12); }
+.card::after { position: absolute; z-index: -1; top: -125px; right: -130px; width: 260px; aspect-ratio: 1; border: 1px solid rgba(28,155,91,.18); border-radius: 50%; box-shadow: 0 0 0 42px rgba(28,155,91,.035); content: ""; }
+.topline { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 13px; border-bottom: 1px solid var(--border); color: var(--green); font-size: 9px; font-weight: 850; letter-spacing: .16em; }
+.card h2 { max-width: 390px; margin: 22px 0 0; font-family: var(--font-display); font-size: clamp(28px, 2.4vw, 38px); font-weight: 520; line-height: 1.08; letter-spacing: -.03em; }
+.card > p { margin: 11px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.card form { display: grid; gap: 12px; margin-top: 21px; }
+.twoColumns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.card label { display: flex; flex-direction: column; gap: 5px; color: var(--ink); font-size: 10px; font-weight: 780; }
+.card input, .card textarea { width: 100%; min-height: 43px; padding: 10px 11px; border: 1px solid var(--border); border-radius: 8px; background: #fbfcf9; color: var(--ink); font: inherit; font-size: 12px; font-weight: 500; transition: border-color .2s ease, box-shadow .2s ease; }
+.card textarea { resize: vertical; }
+.card input:focus, .card textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(28,155,91,.12); }
+.card form > button { display: flex; align-items: center; justify-content: space-between; min-height: 49px; padding: 0 16px; border: 0; border-radius: 9px; background: var(--green); color: var(--green-ink); font-size: 12px; font-weight: 850; }
+.card form > button span { font-size: 20px; font-weight: 400; }
+.card form > button:disabled { opacity: .65; cursor: wait; }
+.card > small { display: block; margin-top: 14px; color: var(--muted); font-size: 9px; line-height: 1.45; }
+.honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.error { color: #a92834; font-size: 10px; line-height: 1.45; }
+.success { display: flex; flex-direction: column; gap: 9px; margin-top: 22px; padding: 20px; border-radius: 12px; background: var(--green-soft); }
+.success strong { font-family: var(--font-display); font-size: 24px; font-weight: 520; }
+.success span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.success button { align-self: flex-start; min-height: 40px; padding: 0; border: 0; background: none; color: var(--green-deep); font-size: 11px; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 480px) { .card { padding: 24px 19px; } .twoColumns { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .card input, .card textarea { transition: none; } }

@@ -1,0 +1,37 @@
+.article { padding-top: 28px; }
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: 11px; }
+.breadcrumb span[aria-current] { max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hero { max-width: 1120px; margin: 0 auto; padding: clamp(70px, 9vw, 135px) 0 clamp(48px, 6vw, 85px); text-align: center; }
+.hero > p { margin: 0; color: var(--green); font-size: 11px; font-weight: 850; letter-spacing: .18em; text-transform: uppercase; }
+.hero h1 { margin: 25px 0 23px; font-family: var(--font-display); font-size: clamp(48px, 6.7vw, 96px); font-weight: 440; line-height: .98; letter-spacing: -.052em; text-wrap: balance; }
+.hero > span { display: block; max-width: 790px; margin: 0 auto; color: var(--muted); font-size: clamp(17px, 1.45vw, 21px); line-height: 1.65; text-wrap: pretty; }
+.hero > div { display: flex; align-items: center; justify-content: center; gap: 12px 22px; margin-top: 30px; font-size: 12px; }
+.hero small { color: var(--muted); }
+.cover { position: relative; width: calc(100vw - 28px); max-width: 1900px; aspect-ratio: 16 / 8.2; margin: 0 50% 0; overflow: hidden; border-radius: 28px; background: var(--sage); transform: translateX(-50%); }
+.cover img { object-fit: cover; }
+.articleGrid { display: grid; grid-template-columns: 250px minmax(0, 780px); justify-content: center; gap: clamp(50px, 8vw, 140px); padding: clamp(78px, 9vw, 140px) 0 40px; }
+.articleGrid aside { position: sticky; top: 35px; align-self: start; padding-top: 6px; }
+.articleGrid aside > span { color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: .16em; }
+.articleGrid aside nav { display: flex; flex-direction: column; margin-top: 22px; border-top: 1px solid var(--border); }
+.articleGrid aside nav a { padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 11px; line-height: 1.45; }
+.articleGrid aside nav a:hover { color: var(--green-deep); }
+.articleGrid aside > a { display: inline-block; margin-top: 25px; color: var(--green-deep); font-size: 12px; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+.prose { min-width: 0; }
+.prose h2 { margin: 1.8em 0 .55em; font-family: var(--font-display); font-size: clamp(34px, 3.6vw, 52px); font-weight: 490; line-height: 1.06; letter-spacing: -.035em; scroll-margin-top: 25px; }
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { margin: 1.7em 0 .5em; font-size: 23px; }
+.prose p, .prose li { color: #425048; font-size: clamp(16px, 1.15vw, 18px); line-height: 1.85; }
+.prose p { margin: 0 0 1.35em; }
+.prose ul { margin: 0 0 1.6em; padding-left: 22px; }
+.prose li + li { margin-top: 8px; }
+.related { padding: clamp(75px, 8vw, 120px) 0; border-top: 1px solid var(--border); }
+.related header p { margin: 0; color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: .16em; }
+.related header h2 { margin: 13px 0 35px; font-family: var(--font-display); font-size: clamp(38px, 4vw, 58px); font-weight: 480; }
+.related > div { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.related article { padding: clamp(28px, 4vw, 50px); border: 1px solid var(--border); border-radius: 17px; background: #fff; }
+.related article > span { color: var(--green-deep); font-size: 9px; font-weight: 850; letter-spacing: .14em; }
+.related h3 { margin: 25px 0 13px; font-family: var(--font-display); font-size: clamp(29px, 3vw, 43px); font-weight: 500; line-height: 1.07; }
+.related article p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+.related article > a { display: inline-block; margin-top: 15px; color: var(--green-deep); font-size: 12px; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 900px) { .articleGrid { grid-template-columns: 1fr; gap: 45px; } .articleGrid aside { position: static; } .articleGrid aside nav { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; } }
+@media (max-width: 620px) { .article { padding-top: 18px; } .hero { padding-top: 58px; } .hero h1 { font-size: 46px; } .hero > div { align-items: center; flex-direction: column; } .cover { width: calc(100vw - 24px); aspect-ratio: 4 / 3; border-radius: 20px; } .articleGrid { padding-top: 62px; } .articleGrid aside nav { grid-template-columns: 1fr; } .related > div { grid-template-columns: 1fr; } }

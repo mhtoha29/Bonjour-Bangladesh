@@ -1,0 +1,7 @@
+.empty { max-width: 900px; margin: 75px auto 0; padding: clamp(40px,6vw,80px); border: 1px solid var(--border); border-radius: 20px; background: #fff; }
+.empty span { color: var(--green); font-size: 12px; font-weight: 850; letter-spacing: .16em; }
+.empty h2 { margin: 0; font-family: var(--font-body); font-size: clamp(34px,3.7vw,56px); font-weight: 560; line-height: 1.02; letter-spacing: -.045em; }
+.empty .subheadline { margin: 17px 0 12px; font-family: var(--font-display); font-size: clamp(29px,3vw,43px); line-height: 1.1; }
+.empty p { max-width: 640px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.empty div { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; }
+.empty a { color: var(--green-deep); font-size: 14px; font-weight: 800; text-decoration: underline; text-underline-offset: 5px; }

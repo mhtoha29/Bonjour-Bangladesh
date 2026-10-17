@@ -1,0 +1,9 @@
+.placeholder { position: relative; display: flex; align-items: flex-end; justify-content: flex-start; width: 100%; min-height: 180px; overflow: hidden; border: 1px solid rgba(11, 93, 59, .12); border-radius: inherit; background-color: #e1e9e0; background-image: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,.45), transparent 55%), repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.17) 3px 4px), repeating-linear-gradient(90deg, transparent 0 3px, rgba(11,93,59,.035) 3px 4px); }
+.placeholder::before { position: absolute; inset: 18px; border: 1px solid rgba(255,255,255,.45); border-radius: 3px; content: ""; pointer-events: none; }
+.portrait { aspect-ratio: 4 / 5; }
+.landscape { aspect-ratio: 16 / 10; }
+.square { aspect-ratio: 1; }
+.stone { background-color: #e8e6df; }
+.linen { background-color: #eae6d8; }
+.displayText { position: absolute; top: 50%; left: 50%; width: calc(100% - 50px); color: rgba(22,43,30,.18); font-family: var(--font-display); font-size: clamp(74px, 6.2vw, 128px); font-weight: 430; letter-spacing: -.08em; line-height: 1; text-align: center; text-transform: uppercase; transform: translate(-50%, -50%); white-space: nowrap; }
+.label { position: relative; display: inline-flex; align-items: center; min-height: 31px; margin: 18px; padding: 6px 10px; border: 1px solid rgba(255,255,255,.65); border-radius: 5px; background: rgba(255,255,255,.73); color: #3d5c49; font-size: 10px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
