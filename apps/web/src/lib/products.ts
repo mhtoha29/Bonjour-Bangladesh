@@ -34,18 +34,25 @@ export async function getProducts(filters: ProductFilters = {}) {
   url.pathname = "/api/v1/products";
   url.search = "";
   for (const [key, value] of Object.entries(filters)) if (value) url.searchParams.set(key, value);
-  const response = await fetch(url, { cache: "no-store" });
-  if (!response.ok) throw new Error(`Product catalog is unavailable (${response.status})`);
-  const payload = z.object({ data: z.array(productSchema), meta: z.object({ total: z.number(), current_page: z.number(), last_page: z.number() }), types: z.array(z.string()), live_count: z.number() }).parse(await response.json());
-  return { products: payload.data, total: payload.meta.total, page: payload.meta.current_page, totalPages: payload.meta.last_page, types: payload.types, liveCount: payload.live_count };
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error();
+    const payload = z.object({ data: z.array(productSchema), meta: z.object({ total: z.number(), current_page: z.number(), last_page: z.number() }), types: z.array(z.string()), live_count: z.number() }).parse(await response.json());
+    return { products: payload.data, total: payload.meta.total, page: payload.meta.current_page, totalPages: payload.meta.last_page, types: payload.types, liveCount: payload.live_count };
+  } catch {
+    return { products: [], total: 0, page: 1, totalPages: 1, types: [], liveCount: 0 };
+  }
 }
 
 export async function getProduct(slug: string): Promise<ProductData | null> {
   const url = new URL(process.env.SITE_API_URL ?? "http://127.0.0.1:8000/api/v1/site");
   url.pathname = `/api/v1/products/${encodeURIComponent(slug)}`;
   url.search = "";
-  const response = await fetch(url, { cache: "no-store" });
-  if (response.status === 404) return null;
-  if (!response.ok) throw new Error(`Product is unavailable (${response.status})`);
-  return productSchema.parse((await response.json()).data);
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) return null;
+    return productSchema.parse((await response.json()).data);
+  } catch {
+    return null;
+  }
 }

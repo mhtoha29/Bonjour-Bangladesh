@@ -24,14 +24,41 @@ const siteSchema = z.object({
 
 export type SiteData = z.infer<typeof siteSchema>["data"];
 
+const fallbackSite: SiteData = {
+  siteName: "Bonjour Bangladesh",
+  seo: {
+    title: "Bonjour Bangladesh | Garment Buying House & Sourcing Partner",
+    description: "Your trusted garment buying house and sourcing partner in Bangladesh.",
+  },
+  navigation: [
+    { label: "Products", href: "/products/" },
+    { label: "Capabilities", href: "/capabilities/" },
+    { label: "Quality & Compliance", href: "/quality-and-compliance/" },
+    { label: "About", href: "/about/" },
+    { label: "Contact", href: "/contact/" },
+  ],
+  hero: {
+    eyebrow: "BONJOUR BANGLADESH · SINCE 2010",
+    title: "Your Trusted Garment Buying House & Sourcing Partner in Bangladesh",
+    description: "From product development and sourcing to quality follow-up and shipment coordination, we help international buyers move with confidence.",
+    primaryAction: { label: "Explore Products", href: "/products/" },
+    secondaryAction: { label: "Request a Quote", href: "/request-a-quote/" },
+    media: null,
+    mobileMedia: null,
+  },
+  finder: { audiences: [], constructions: [], productTypes: [] },
+};
+
 export async function getSite(): Promise<SiteData> {
-  const response = await fetch(process.env.SITE_API_URL ?? "http://127.0.0.1:8000/api/v1/site", {
-    cache: "no-store",
-  });
-  if (!response.ok) {
-    throw new Error(`Site content is unavailable (${response.status})`);
+  try {
+    const response = await fetch(process.env.SITE_API_URL ?? "http://127.0.0.1:8000/api/v1/site", {
+      cache: "no-store",
+    });
+    if (!response.ok) return fallbackSite;
+    return siteSchema.parse(await response.json()).data;
+  } catch {
+    return fallbackSite;
   }
-  return siteSchema.parse(await response.json()).data;
 }
 
 export function mediaUrl(path: string): string {
