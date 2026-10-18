@@ -61,6 +61,23 @@ class PublicSiteSeeder extends Seeder
             }
         }
 
+        $foundation = Page::firstOrCreate(
+            ['slug' => 'hashmat-ali-foundation'],
+            [
+                'title' => 'Hashmat Ali Foundation',
+                'status' => 'published',
+                'seo_title' => 'Hashmat Ali Foundation | Bonjour Bangladesh',
+                'seo_description' => 'The community support initiative of Bonjour Bangladesh, supporting disadvantaged people and people with disabilities.',
+            ],
+        );
+
+        foreach ([1, 2, 3] as $slot) {
+            PageBlock::firstOrCreate(
+                ['page_id' => $foundation->id, 'type' => 'foundation_gallery', 'sort_order' => $slot],
+                ['content' => ['slot' => $slot, 'caption' => '']],
+            );
+        }
+
         foreach ([
             ['Products', '/products/'],
             ['Capabilities', '/capabilities/'],

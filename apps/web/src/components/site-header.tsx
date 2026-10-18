@@ -81,9 +81,9 @@ export function SiteHeader({ overlay = false, navigation }: HeaderProps) {
         </div>
         <Link href="/" className={styles.desktopBrand} aria-label={`${brand.name} home`}>
           {overlay ? (
-            <svg className={styles.tabShape} viewBox="0 0 176 54" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M0 0H176C165 0 161 8 153 21L140 43C136 50 131 54 121 54H55C45 54 40 50 36 43L23 21C15 8 11 0 0 0Z" />
-              <image href="/bonjour-logo.png" x="52" y="-4" width="72" height="72" style={{ mixBlendMode: "multiply" }} />
+            <svg className={styles.tabShape} viewBox="0 0 196 58" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 0H196C183 0 178 9 170 23L156 46C152 54 146 58 135 58H61C50 58 44 54 40 46L26 23C18 9 13 0 0 0Z" />
+              <image href="/bonjour-logo.png" x="57" y="-9" width="82" height="82" style={{ mixBlendMode: "multiply" }} />
             </svg>
           ) : <CroppedLogo className={styles.desktopLogoCrop} />}
         </Link>

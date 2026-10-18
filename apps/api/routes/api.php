@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\Api\V1\AdminAuthController;
 use App\Http\Controllers\Api\V1\AdminBlogController;
+use App\Http\Controllers\Api\V1\AdminFoundationController;
 use App\Http\Controllers\Api\V1\AdminInquiryController;
 use App\Http\Controllers\Api\V1\AdminProductController;
 use App\Http\Controllers\Api\V1\AdminProfileController;
 use App\Http\Controllers\Api\V1\AdminSiteController;
 use App\Http\Controllers\Api\V1\AdminTeamController;
+use App\Http\Controllers\Api\V1\FoundationController;
 use App\Http\Controllers\Api\V1\InquiryController;
 use App\Http\Controllers\Api\V1\PublicBlogController;
 use App\Http\Controllers\Api\V1\PublicProductController;
@@ -15,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function (): void {
     Route::get('/site', SiteController::class);
+    Route::get('/foundation', FoundationController::class);
     Route::get('/products', [PublicProductController::class, 'index']);
     Route::get('/products/slugs', [PublicProductController::class, 'slugs']);
     Route::get('/products/{slug}', [PublicProductController::class, 'show']);
@@ -53,6 +56,8 @@ Route::prefix('v1')->group(function (): void {
             Route::get('/site', [AdminSiteController::class, 'show']);
             Route::patch('/site', [AdminSiteController::class, 'update']);
             Route::post('/site/hero-image', [AdminSiteController::class, 'uploadHeroImage']);
+            Route::get('/foundation', [AdminFoundationController::class, 'show']);
+            Route::post('/foundation/{slot}', [AdminFoundationController::class, 'upload'])->whereNumber('slot');
         });
     });
 });

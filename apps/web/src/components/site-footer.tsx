@@ -4,7 +4,7 @@ import styles from "./site-footer.module.css";
 
 const footerGroups = [
   { title: "Explore", links: [{ label: "All products", href: "/products/" }, { label: "Men", href: "/products/men/" }, { label: "Women", href: "/products/women/" }, { label: "Kids", href: "/products/kids/" }] },
-  { title: "Company", links: [{ label: "About", href: "/about/" }, { label: "Capabilities", href: "/capabilities/" }, { label: "Foundation", href: "/hashmat-ali-foundation/" }, { label: "Blog", href: "/blog/" }, { label: "FAQ", href: "/faq/" }] },
+  { title: "Company", links: [{ label: "About", href: "/about/" }, { label: "Capabilities", href: "/capabilities/" }, { label: "Blog", href: "/blog/" }, { label: "FAQ", href: "/faq/" }] },
   { title: "Quality & responsibility", links: [{ label: "Quality control", href: "/quality-control/" }, { label: "Responsible sourcing", href: "/compliance-responsible-sourcing/" }, { label: "Sustainability", href: "/sustainability/" }] },
 ];
 
@@ -32,6 +32,7 @@ export function SiteFooter() {
             <p className={styles.wordmark}>Bonjour<br />Bangladesh<span>®</span></p>
             <p>{brand.slogan}</p>
             <a href={`mailto:${brand.email}`} className={styles.email}>{brand.email} ↗</a>
+            <Link href="/hashmat-ali-foundation/" className={styles.foundationLink}>Hashmat Ali Foundation <span aria-hidden="true">↗</span></Link>
           </div>
           {footerGroups.map((group) => (
             <div key={group.title} className={styles.linkColumn}>

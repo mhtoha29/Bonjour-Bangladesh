@@ -6,6 +6,7 @@ import { InteriorHero, InteriorShell, InquiryBand } from "@/components/interior-
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { brand, staticPages } from "@/content/site-content";
 import { publicRobots } from "@/lib/seo";
+import { getFoundation } from "@/lib/foundation";
 import { WhyBonjour } from "@/components/why-bonjour";
 import styles from "./page.module.css";
 
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const page = staticPages[slug as keyof typeof staticPages] ?? legalDrafts[slug as keyof typeof legalDrafts] ?? reviewPages[slug];
   if (slug === "about") return { title: "About", description: "Meet Bonjour Bangladesh, a Dhaka-based apparel sourcing partner working through selected manufacturing partners since 2010.", alternates: { canonical: "/about/" }, robots: publicRobots };
-  if (slug === "hashmat-ali-foundation") return { title: "Hashmat Ali Foundation", description: "Bonjour Bangladesh's community support initiative for people facing financial and social challenges.", alternates: { canonical: "/hashmat-ali-foundation/" }, robots: { index: false, follow: false } };
+  if (slug === "hashmat-ali-foundation") return { title: "Hashmat Ali Foundation", description: "Bonjour Bangladesh's community support initiative for disadvantaged people and people with disabilities.", alternates: { canonical: "/hashmat-ali-foundation/" }, robots: publicRobots };
   if (!page) return {};
   return { title: page.title, description: page.lead, alternates: { canonical: `/${slug}/` }, robots: reviewPages[slug] || slug in legalDrafts ? { index: false, follow: false } : publicRobots };
 }
@@ -79,11 +80,16 @@ function AboutPage() {
   );
 }
 
-function FoundationPage() {
+async function FoundationPage() {
+  const foundation = await getFoundation();
+  const firstPhoto = foundation.gallery.find((item) => item.media)?.media;
+
   return <InteriorShell>
-    <InteriorHero eyebrow="HASHMAT ALI FOUNDATION" title="Supporting people. Creating hope." lead="Bonjour Bangladesh believes business success is more meaningful when it can be shared with people who need support." />
-    <section className={styles.story}><div><h2 className={styles.sectionHeadline}>OUR PURPOSE</h2><p className={styles.sectionSubheadline}>Care beyond the supply chain.</p></div><div><p>Through the Hashmat Ali Foundation, we support underprivileged and disadvantaged people, including people with disabilities, providing assistance according to their needs and circumstances.</p><p>Our aim is to contribute to the wellbeing of vulnerable people and help create a more caring, inclusive community. The foundation is part of our commitment to social responsibility and giving back.</p></div></section>
-    <section className={styles.slogan}><p>Our belief</p><blockquote>Building business. Supporting people. Creating a better tomorrow.</blockquote></section>
+    <InteriorHero eyebrow="HASHMAT ALI FOUNDATION" title="Supporting people. Creating hope." lead="At Bonjour Bangladesh, we believe success is more meaningful when it can be shared with those who need support." aside={<div className={styles.foundationHeroMedia}>{firstPhoto ? <Image src={firstPhoto.url} alt={firstPhoto.alt} fill sizes="(max-width: 800px) 100vw, 38vw" priority unoptimized /> : <MediaPlaceholder shape="square" tone="linen" label="Client-approved foundation activity photograph pending" displayText="CARE / COMMUNITY" />}</div>} />
+    <section className={`${styles.story} ${styles.foundationStory}`}><div><p className={styles.kicker}>OUR PURPOSE</p><h2 className={styles.sectionHeadline}>DIGNITY, COMPASSION &amp; OPPORTUNITY</h2><p className={styles.sectionSubheadline}>Care beyond the supply chain.</p></div><div><p>Through the Hashmat Ali Foundation, we support underprivileged and disadvantaged people, including people with disabilities, providing assistance based on their needs and circumstances.</p><p>Our foundation is committed to contributing to the well-being of vulnerable people and helping create a more caring, inclusive and supportive community.</p><p>We believe everyone deserves dignity, compassion and an opportunity for a better life. Through ongoing charitable activities, we aim to make a positive difference for people facing financial and social challenges.</p></div></section>
+    <section className={styles.foundationGallery} aria-labelledby="foundation-gallery-heading"><header><div><p className={styles.kicker}>MAKING A DIFFERENCE</p><h2 id="foundation-gallery-heading" className={styles.sectionHeadline}>COMMUNITY, SEEN WITH CARE.</h2></div><p>Selected moments from the foundation’s ongoing charitable activities—support shaped around individual needs, circumstances and dignity.</p></header><div className={styles.foundationGalleryGrid}>{foundation.gallery.map((item, index) => <figure key={item.slot} className={index === 0 ? styles.foundationGalleryLead : undefined}><div>{item.media ? <Image src={item.media.url} alt={item.media.alt} fill sizes={index === 0 ? "(max-width: 800px) 100vw, 58vw" : "(max-width: 800px) 100vw, 30vw"} unoptimized /> : <MediaPlaceholder shape={index === 0 ? "landscape" : "portrait"} tone={index === 1 ? "sage" : "stone"} label={`Foundation activity photograph ${item.slot} pending`} displayText={`0${item.slot} / COMMUNITY`} />}</div>{item.caption && <figcaption>{item.caption}</figcaption>}</figure>)}</div></section>
+    <section className={styles.foundationCommitment}><span>BEYOND BUSINESS</span><div><h2>Our business connects people around the world.</h2><p>Our foundation helps us connect with our community. The Hashmat Ali Foundation is an important part of our commitment to social responsibility and giving back.</p></div></section>
+    <section className={styles.slogan}><p>Bonjour Bangladesh &amp; Hashmat Ali Foundation</p><blockquote>Building business. Supporting people. Creating a better tomorrow.</blockquote></section>
     <InquiryBand title="Connect with Bonjour Bangladesh." body="Contact our team to learn more about the company and our community commitments." />
   </InteriorShell>;
 }

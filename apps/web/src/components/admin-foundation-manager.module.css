@@ -1,0 +1,23 @@
+.section { margin-top: 20px; padding: clamp(24px, 3vw, 42px); border: 1px solid #dce4da; border-radius: 16px; background: #f1f4ee; }
+.section > header { display: grid; grid-template-columns: 1fr minmax(260px, .55fr); gap: 35px; align-items: end; margin-bottom: 28px; }
+.section > header span { color: var(--green-deep); font-size: 10px; font-weight: 850; letter-spacing: .15em; }
+.section h2 { max-width: 720px; margin: 10px 0 0; font-family: var(--font-display); font-size: clamp(34px, 3vw, 48px); font-weight: 500; line-height: 1.05; }
+.section > header p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.grid article { padding: 14px; border: 1px solid #dce4da; border-radius: 13px; background: #fff; }
+.preview { display: grid; place-items: center; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 9px; background: linear-gradient(145deg, #dce5dc, #f7f6ef); }
+.preview img { width: 100%; height: 100%; object-fit: cover; }
+.preview > span { max-width: 170px; color: #6f7e73; font-size: 9px; font-weight: 850; letter-spacing: .13em; line-height: 1.6; text-align: center; }
+.slotTitle { display: flex; align-items: baseline; gap: 10px; margin: 15px 0; }
+.slotTitle > span { color: var(--crimson); font-size: 10px; font-weight: 850; }
+.slotTitle h3 { margin: 0; font-family: var(--font-display); font-size: 22px; font-weight: 520; }
+.grid form { display: flex; flex-direction: column; gap: 11px; }
+.grid label { display: flex; flex-direction: column; gap: 6px; color: var(--ink); font-size: 10px; font-weight: 800; }
+.grid input { width: 100%; min-height: 42px; padding: 9px 10px; border: 1px solid var(--border); border-radius: 7px; background: #fcfdfb; color: var(--ink); font: inherit; font-size: 11px; }
+.grid button { min-height: 43px; border: 0; border-radius: 7px; background: var(--green); color: var(--green-ink); font-size: 11px; font-weight: 850; }
+.grid button:disabled { opacity: .6; cursor: wait; }
+.notice, .error, .loading { margin: 0 0 20px; padding: 11px 13px; border-radius: 8px; background: #e2f4e8; color: #126c40; font-size: 11px; line-height: 1.5; }
+.error { background: #fff0f0; color: #9b2932; }
+.loading { background: transparent; color: var(--muted); }
+@media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } .section > header { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .section { padding: 22px 18px; } }
