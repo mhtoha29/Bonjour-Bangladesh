@@ -23,8 +23,9 @@ export function ContactInquiryForm() {
   }
 
   return <section className={styles.card} aria-labelledby="contact-form-title">
-    <div className={styles.topline}><span>QUICK INQUIRY</span><span>01—04</span></div>
-    <h2 id="contact-form-title">Start with a short brief.</h2>
+    <div className={styles.topline}><span>BUYER DESK · DHAKA</span><span>01—04</span></div>
+    <h2 id="contact-form-title">QUICK INQUIRY</h2>
+    <p className={styles.subheadline}>Start with a short brief.</p>
     <p>Tell us the product and destination. Detailed specifications can follow.</p>
     {state === "sent" ? <div className={styles.success} role="status"><strong>Your inquiry is in our dashboard.</strong><span>Our team will review it and follow up by email.</span><button type="button" onClick={() => setState("idle")}>Send another inquiry</button></div> : <form onSubmit={submit}>
       <div className={styles.twoColumns}><label>Full name<input name="name" autoComplete="name" required minLength={2} maxLength={120} /></label><label>Business email<input name="email" type="email" autoComplete="email" required maxLength={190} /></label></div>

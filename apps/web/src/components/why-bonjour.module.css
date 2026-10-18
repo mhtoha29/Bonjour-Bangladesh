@@ -38,14 +38,6 @@
   margin-bottom: clamp(38px, 5vw, 62px);
 }
 
-.kicker {
-  margin: 0 0 16px;
-  color: var(--crimson);
-  font-size: 11px;
-  font-weight: 850;
-  letter-spacing: .19em;
-}
-
 .header h2 {
   max-width: 900px;
   margin: 0;
@@ -59,13 +51,15 @@
 
 .subheadline {
   max-width: 760px;
-  margin: 18px 0 0;
+  margin: 15px 0 0;
   font-family: var(--font-display);
-  font-size: clamp(24px, 2.3vw, 37px);
+  font-size: clamp(25px, 2.45vw, 39px);
   line-height: 1.12;
   letter-spacing: -.028em;
   text-wrap: balance;
 }
+
+.intro { max-width: 680px; margin: 13px 0 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
 
 .promise {
   max-width: 350px;
@@ -168,9 +162,9 @@
   .compactTop { margin-top: 54px; }
   .section::before { background-size: 48px 48px; }
   .header { gap: 27px; margin-bottom: 34px; padding-inline: 7px; }
-  .kicker { margin-bottom: 13px; font-size: 9px; }
   .header h2 { font-size: clamp(34px, 10.1vw, 45px); }
   .subheadline { font-size: 25px; }
+  .intro { font-size: 14px; }
   .promise { padding-left: 17px; font-size: 19px; }
   .grid { grid-template-columns: 1fr; border-radius: 14px; overflow: hidden; }
   .card { min-height: 225px; padding: 25px 23px; }

@@ -1,7 +1,8 @@
 .card { position: relative; isolation: isolate; overflow: hidden; padding: clamp(25px, 3vw, 38px); border: 1px solid rgba(25,35,30,.12); border-radius: 24px 24px 24px 7px; background: radial-gradient(circle at 100% 0, rgba(28,155,91,.14), transparent 40%), #fff; box-shadow: 0 28px 70px rgba(25,42,31,.12); }
 .card::after { position: absolute; z-index: -1; top: -125px; right: -130px; width: 260px; aspect-ratio: 1; border: 1px solid rgba(28,155,91,.18); border-radius: 50%; box-shadow: 0 0 0 42px rgba(28,155,91,.035); content: ""; }
 .topline { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 13px; border-bottom: 1px solid var(--border); color: var(--green); font-size: 9px; font-weight: 850; letter-spacing: .16em; }
-.card h2 { max-width: 390px; margin: 22px 0 0; font-family: var(--font-display); font-size: clamp(28px, 2.4vw, 38px); font-weight: 520; line-height: 1.08; letter-spacing: -.03em; }
+.card h2 { max-width: 390px; margin: 22px 0 0; font-size: clamp(28px, 2.4vw, 38px); font-weight: 620; line-height: 1.02; letter-spacing: -.04em; }
+.card > .subheadline { margin-top: 10px; color: var(--ink); font-family: var(--font-display); font-size: clamp(21px, 1.85vw, 28px); font-weight: 480; line-height: 1.08; letter-spacing: -.025em; }
 .card > p { margin: 11px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
 .card form { display: grid; gap: 12px; margin-top: 21px; }
 .twoColumns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }

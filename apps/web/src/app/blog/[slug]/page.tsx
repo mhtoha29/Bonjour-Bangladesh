@@ -75,7 +75,7 @@ export default async function BlogArticlePage({ params }: Props) {
       {post.cover_image && <figure className={styles.cover}><Image src={post.cover_image.src} alt={post.cover_image.alt} fill sizes="(max-width: 800px) 100vw, 88vw" priority /></figure>}
       <div className={styles.articleGrid}><aside><span>IN THIS ARTICLE</span><nav aria-label="Article sections">{headings.map((heading) => <a href={`#${headingId(heading)}`} key={heading}>{heading}</a>)}</nav><Link href="/request-a-quote/">Discuss your brief ↗</Link></aside><div className={styles.prose}><ArticleBody body={post.body} /></div></div>
     </article>
-    {related.length > 0 && <section className={styles.related}><header><p>CONTINUE READING</p><h2>More buyer guidance.</h2></header><div>{related.map((item) => <article key={item.id}><span>{item.category} · {item.reading_time} MIN</span><h3><Link href={`/blog/${item.slug}/`}>{item.title}</Link></h3><p>{item.excerpt}</p><Link href={`/blog/${item.slug}/`}>Read article ↗</Link></article>)}</div></section>}
+    {related.length > 0 && <section className={styles.related}><header><h2>CONTINUE READING</h2><p className={styles.relatedSubheadline}>More buyer guidance.</p></header><div>{related.map((item) => <article key={item.id}><span>{item.category} · {item.reading_time} MIN</span><h3><Link href={`/blog/${item.slug}/`}>{item.title}</Link></h3><p>{item.excerpt}</p><Link href={`/blog/${item.slug}/`}>Read article ↗</Link></article>)}</div></section>}
     <InquiryBand title="Turn the guidance into a product conversation." body="Send your product idea, reference or tech pack. We’ll discuss the sourcing, quality and compliance requirements that matter for your order." />
   </InteriorShell>;
 }

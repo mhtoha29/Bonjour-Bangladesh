@@ -50,20 +50,20 @@
 .headline {
   max-width: 360px;
   margin: 0;
-  color: #315a46;
+  color: var(--ink);
   font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 820;
-  line-height: 1.45;
-  letter-spacing: .15em;
+  font-size: clamp(22px, 1.8vw, 30px);
+  font-weight: 650;
+  line-height: 1.06;
+  letter-spacing: -.035em;
   text-transform: uppercase;
 }
 
 .subheadline {
   max-width: 390px;
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   font-family: var(--font-display);
-  font-size: clamp(29px, 2.2vw, 39px);
+  font-size: clamp(17px, 1.3vw, 22px);
   font-weight: 470;
   line-height: 1;
   letter-spacing: -.04em;
@@ -220,7 +220,8 @@
   .panel { height: 166px; min-height: 0; margin-top: -64px; }
   .copy { padding: 20px 28px 18px clamp(32px, 3.4vw, 54px); }
   .headline { max-width: 340px; }
-  .subheadline { max-width: 360px; margin-top: 8px; font-size: clamp(27px, 1.95vw, 35px); }
+  .headline { font-size: clamp(22px, 1.75vw, 29px); }
+  .subheadline { max-width: 360px; margin-top: 7px; font-size: clamp(17px, 1.25vw, 21px); }
   .body { display: none; }
   .caption { margin-top: 10px; padding-top: 7px; }
   .mapArea { padding-block: 0; }
@@ -231,8 +232,8 @@
 @media (max-width: 1100px) {
   .panel { grid-template-columns: minmax(250px, .75fr) minmax(0, 1.25fr); width: min(calc(100% - 54px), 1100px); min-height: 256px; margin-top: -36px; }
   .copy { padding: 30px 24px 27px 32px; }
-  .headline { font-size: 10px; }
-  .subheadline { font-size: clamp(27px, 3.1vw, 36px); }
+  .headline { font-size: clamp(22px, 2.8vw, 29px); }
+  .subheadline { font-size: clamp(18px, 2.1vw, 22px); }
   .body { display: none; }
   .caption { margin-top: 14px; }
 }
@@ -252,8 +253,8 @@
 
   .panel::before { background: linear-gradient(90deg, var(--crimson) 0 12%, var(--green) 12% 38%, transparent 38% 100%); }
   .copy { padding: 27px 23px 5px; }
-  .headline { max-width: 300px; font-size: 9px; }
-  .subheadline { max-width: 310px; margin-top: 8px; font-size: clamp(29px, 8.1vw, 37px); }
+  .headline { max-width: 310px; font-size: clamp(23px, 6.2vw, 30px); }
+  .subheadline { max-width: 310px; margin-top: 8px; font-size: clamp(20px, 5.4vw, 26px); }
   .body { display: none; }
   .caption { margin-top: 12px; }
   .mapArea { display: block; width: 100%; min-height: 0; padding: 2px 0 16px; overflow: hidden; }

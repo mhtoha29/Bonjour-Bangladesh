@@ -59,7 +59,8 @@ export function ServiceGallery() {
         <div className={styles.inner}>
           <div className={styles.headingRow}>
             <div>
-              <h2 id="services-heading" className={styles.headline}>WHAT WE DO <span aria-hidden="true">/</span> THE SOURCING EDITION</h2>
+              <h2 id="services-heading" className={styles.headline}>WHAT WE DO</h2>
+              <p className={styles.edition}>The sourcing edition.</p>
               <p className={styles.subheadline}>Every detail, <em>considered.</em></p>
             </div>
             <p>Seven connected services, shaped around your product brief—from the first partner match to shipment readiness.</p>

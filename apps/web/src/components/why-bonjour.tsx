@@ -58,9 +58,9 @@ export function WhyBonjour({ compactTop = false }: { compactTop?: boolean }) {
     <section id="why-bonjour" className={`${styles.section} ${compactTop ? styles.compactTop : ""} reveal`} aria-labelledby="why-bonjour-title">
       <header className={styles.header}>
         <div>
-          <p className={styles.kicker}>WHY BONJOUR BANGLADESH</p>
-          <h2 id="why-bonjour-title">THE BONJOUR DIFFERENCE</h2>
-          <p className={styles.subheadline}>A sourcing partner chosen for what happens between the brief and the shipment.</p>
+          <h2 id="why-bonjour-title">WHY BONJOUR BANGLADESH</h2>
+          <p className={styles.subheadline}>The Bonjour difference.</p>
+          <p className={styles.intro}>A sourcing partner chosen for what happens between the brief and the shipment.</p>
         </div>
         <p className={styles.promise}><span>THE STANDARD</span>The right quality. The right time. The right commitment.</p>
       </header>
