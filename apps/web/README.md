@@ -14,6 +14,8 @@ Next.js 16 public-site frontend. Run `npm install` and `npm run dev` from this d
 
 ## Deployment configuration
 
+For Vercel, set the project Root Directory to `apps/web`.
+
 Copy `.env.example` to the web environment and replace local URLs with the production site and Laravel API origins. Configure Laravel `APP_URL`, `FRONTEND_URL`, `INQUIRY_RECIPIENT`, real SMTP settings, database credentials and public storage link. Keep Laravel `storage/` and database outside replaceable code releases (or link them into each release) so uploads survive ZIP-based updates. Next.js requires a persistent Node runtime; a static file upload alone cannot run the dynamic/admin routes.
 
 ## Checks
