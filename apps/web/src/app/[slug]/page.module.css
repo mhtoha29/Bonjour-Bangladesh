@@ -10,6 +10,8 @@
 .foundationHeroMedia > img { object-fit: cover; }
 .foundationLogoBadge { position: absolute; z-index: 2; right: 20px; bottom: 20px; display: grid; place-items: center; width: clamp(112px, 11vw, 170px); padding: 10px; border: 1px solid rgba(255,255,255,.72); border-radius: 18px; background: rgba(250,248,242,.92); box-shadow: 0 18px 36px rgba(20,42,28,.2); backdrop-filter: blur(12px); }
 .foundationLogoBadge img { width: 100%; height: auto; object-fit: contain; }
+.foundationLogoFull { position: absolute; inset: 0; display: grid; place-items: center; padding: clamp(22px, 5vw, 70px); background: linear-gradient(145deg, #fbfaf4, #e9eee7); }
+.foundationLogoFull img { object-fit: contain; }
 .foundationHeroMedia > [role="img"], .foundationGalleryGrid figure > div > [role="img"] { height: 100%; min-height: 100%; aspect-ratio: auto; }
 .story { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(55px, 7vw, 110px); padding: clamp(76px, 8vw, 115px) 0; border-bottom: 1px solid var(--border); }
 .reviewNotice h2 { margin: 0; font-family: var(--font-display); font-size: clamp(38px, 4vw, 58px); font-weight: 500; line-height: 1.08; letter-spacing: -.04em; }
