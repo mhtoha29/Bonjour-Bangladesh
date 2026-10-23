@@ -185,6 +185,8 @@
 .foundationSection { display: grid; grid-template-columns: 1fr .72fr; align-items: center; gap: clamp(50px, 8vw, 150px); border-block: 1px solid var(--border); }
 .foundationSection .sectionHeadline { max-width: 920px; }
 .foundationSection > div:last-child { align-self: center; }
+.foundationLogo { width: clamp(94px, 9vw, 142px); margin-bottom: 22px; padding: 8px; border: 1px solid rgba(27,52,37,.12); border-radius: 18px; background: #fffefa; box-shadow: 0 15px 35px rgba(25,42,31,.08); }
+.foundationLogo img { display: block; width: 100%; height: auto; object-fit: contain; }
 .foundationSection > div:last-child p { max-width: 520px; margin: 0 0 35px; color: var(--muted); font-size: clamp(17px, 1.25vw, 21px); line-height: 1.65; }
 
 @media (min-width: 801px) {

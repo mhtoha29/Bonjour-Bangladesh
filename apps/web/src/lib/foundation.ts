@@ -22,7 +22,7 @@ export type FoundationData = z.infer<typeof foundationSchema>["data"];
 
 export const fallbackFoundation: FoundationData = {
   title: "Hashmat Ali Foundation",
-  gallery: [1, 2, 3].map((slot) => ({ slot, caption: "", media: null })),
+  gallery: [1, 2, 3, 4, 5, 6].map((slot) => ({ slot, caption: "", media: null })),
 };
 
 export async function getFoundation(): Promise<FoundationData> {

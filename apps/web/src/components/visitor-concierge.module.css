@@ -11,12 +11,12 @@
 .whatsapp { border-color: rgba(18,134,75,.38); background: linear-gradient(145deg, #31d773, #159454); color: #fff; }
 .whatsapp:hover { background: linear-gradient(145deg, #39df7b, #107b46); }
 .socialWrap { position: relative; }
-.socialPanel { position: absolute; right: 58px; top: -16px; width: 212px; padding: 15px; border: 1px solid var(--border); border-radius: 12px; background: #fff; box-shadow: 0 14px 42px rgba(9,31,19,.16); }
+.socialPanel { position: absolute; right: 58px; top: -16px; width: 246px; padding: 15px; border: 1px solid var(--border); border-radius: 14px; background: #fff; box-shadow: 0 14px 42px rgba(9,31,19,.16); }
 .socialPanel > span { display: block; color: var(--ink); font-size: 13px; font-weight: 800; }
-.socialPanel > div { display: flex; gap: 8px; margin-top: 12px; }
-.socialPanel button, .socialPanel a { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--border); border-radius: 50%; background: var(--ivory); color: var(--muted); font-size: 18px; font-weight: 800; }
-.socialPanel a:hover { border-color: var(--green); color: var(--green); }
-.socialPanel button:disabled { cursor: not-allowed; opacity: .62; }
+.socialPanel > div { display: flex; gap: 7px; margin-top: 12px; }
+.socialPanel a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%; background: var(--ivory); color: var(--muted); transition: color .22s ease, border-color .22s ease, background .22s ease, transform .22s ease; }
+.socialPanel a svg { width: 18px; height: 18px; }
+.socialPanel a:hover { border-color: var(--green); background: #eef6ef; color: var(--green); transform: translateY(-2px); }
 .socialPanel small { display: block; margin-top: 10px; color: var(--muted); font-size: 11px; line-height: 1.45; }
 .greeting { position: fixed; z-index: 41; right: 83px; bottom: 84px; display: flex; align-items: center; gap: 2px; width: min(283px, calc(100vw - 103px)); padding: 7px 8px 7px 14px; border: 1px solid var(--border); border-radius: 12px; background: #fff; box-shadow: 0 14px 40px rgba(0,0,0,.18); animation: greeting-enter .35s ease-out both; }
 .greeting::after { position: absolute; right: -6px; bottom: 17px; width: 10px; height: 10px; transform: rotate(45deg); border-top: 1px solid var(--border); border-right: 1px solid var(--border); background: #fff; content: ""; }

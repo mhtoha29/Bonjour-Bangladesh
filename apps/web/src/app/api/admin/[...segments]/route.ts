@@ -26,7 +26,7 @@ function endpoint(segments: string[], method: string): string | null {
   if (path === "site" && ["GET", "PATCH"].includes(method)) return path;
   if (path === "site/hero-image" && method === "POST") return path;
   if (path === "foundation" && method === "GET") return path;
-  if (/^foundation\/[1-3]$/.test(path) && method === "POST") return path;
+  if (/^foundation\/[1-6]$/.test(path) && method === "POST") return path;
   return null;
 }
 

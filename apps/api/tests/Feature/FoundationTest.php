@@ -13,14 +13,14 @@ class FoundationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_public_foundation_exposes_three_safe_gallery_slots(): void
+    public function test_public_foundation_exposes_six_safe_gallery_slots(): void
     {
         $this->seed(PublicSiteSeeder::class);
 
         $this->getJson('/api/v1/foundation')
             ->assertOk()
             ->assertJsonPath('data.title', 'Hashmat Ali Foundation')
-            ->assertJsonCount(3, 'data.gallery')
+            ->assertJsonCount(6, 'data.gallery')
             ->assertJsonPath('data.gallery.0.media', null);
     }
 

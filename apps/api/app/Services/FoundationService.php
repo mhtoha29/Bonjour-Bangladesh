@@ -27,7 +27,7 @@ class FoundationService
 
     public function upload(int $slot, UploadedFile $image, string $alt, ?string $caption, ProductImageOptimizer $optimizer): array
     {
-        abort_unless(in_array($slot, [1, 2, 3], true), 404);
+        abort_unless(in_array($slot, range(1, 6), true), 404);
 
         $page = $this->ensurePage();
         $block = $page->blocks()->firstOrCreate(
@@ -72,7 +72,7 @@ class FoundationService
             ],
         );
 
-        foreach ([1, 2, 3] as $slot) {
+        foreach (range(1, 6) as $slot) {
             $page->blocks()->firstOrCreate(
                 ['type' => 'foundation_gallery', 'sort_order' => $slot],
                 ['content' => ['slot' => $slot, 'caption' => '']],
@@ -84,17 +84,22 @@ class FoundationService
 
     private function format(Page $page): array
     {
+        $blocks = $page->blocks
+            ->where('type', 'foundation_gallery')
+            ->keyBy(fn (PageBlock $block): int => (int) ($block->content['slot'] ?? $block->sort_order));
+
         return [
             'title' => $page->title,
-            'gallery' => $page->blocks
-                ->where('type', 'foundation_gallery')
-                ->sortBy('sort_order')
-                ->values()
-                ->map(fn (PageBlock $block): array => [
-                    'slot' => (int) ($block->content['slot'] ?? $block->sort_order),
-                    'caption' => (string) ($block->content['caption'] ?? ''),
-                    'media' => $this->publicMedia($block->mediaAsset),
-                ])->all(),
+            'gallery' => collect(range(1, 6))->map(function (int $slot) use ($blocks): array {
+                $block = $blocks->get($slot);
+                $content = $block?->content ?? [];
+
+                return [
+                    'slot' => $slot,
+                    'caption' => (string) ($content['caption'] ?? ''),
+                    'media' => $this->publicMedia($block?->mediaAsset),
+                ];
+            })->all(),
         ];
     }
 

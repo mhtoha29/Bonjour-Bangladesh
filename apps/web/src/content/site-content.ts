@@ -6,7 +6,13 @@ export const brand = {
   phoneDisplay: "+880 1798 775477",
   phoneHref: "+8801798775477",
   whatsapp: "https://wa.me/8801798775477",
-  socialProfiles: { linkedin: null, instagram: null, facebook: null } as Record<"linkedin" | "instagram" | "facebook", string | null>,
+  socialProfiles: {
+    linkedin: "https://www.linkedin.com/company/bonjourbangladesh/home/",
+    x: "https://x.com/BonjourBD",
+    instagram: "https://www.instagram.com/bonjourbd/?hl=en",
+    facebook: "https://www.facebook.com/TheBonjourBangladesh/",
+    pinterest: "https://www.pinterest.com/BonjourBangladesh26/",
+  },
   address: "House 8, Road 6/A, Sector 4, Uttara, Dhaka 1230, Bangladesh",
 } as const;
 

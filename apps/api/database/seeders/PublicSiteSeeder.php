@@ -71,7 +71,7 @@ class PublicSiteSeeder extends Seeder
             ],
         );
 
-        foreach ([1, 2, 3] as $slot) {
+        foreach (range(1, 6) as $slot) {
             PageBlock::firstOrCreate(
                 ['page_id' => $foundation->id, 'type' => 'foundation_gallery', 'sort_order' => $slot],
                 ['content' => ['slot' => $slot, 'caption' => '']],
